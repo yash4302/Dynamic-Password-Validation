@@ -1,0 +1,7 @@
+.container {
+  padding: calc(var(--bs-gutter-x) * 0.5);
+}
+
+.code {
+  font-family: 'Consolas', 'Courier New', Courier, monospace;
+}

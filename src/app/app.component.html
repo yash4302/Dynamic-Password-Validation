@@ -1,0 +1,38 @@
+<div class="container">
+  <form [formGroup]="passwordForm">
+    <label for="username" class="form-label">Username</label>
+    <input
+      formControlName="username"
+      class="form-control"
+      id="username"
+      autocomplete="off"
+    />
+
+    <label for="password" class="form-label">Password</label> <br />
+    <input
+      formControlName="password"
+      class="form-control"
+      id="password"
+      type="text"
+      autocomplete="off"
+      [class.is-valid]="
+        passwordForm.controls.password.value !== '' &&
+        !passwordForm.controls.password.invalid
+      "
+      [class.is-invalid]="passwordForm.controls.password.invalid"
+    />
+  </form>
+</div>
+
+<div class="container">
+  <h4>Validations</h4>
+  <ul>
+    <li *ngIf="validations.length === 0">No Validations</li>
+    <li *ngFor="let validation of validations">
+      {{ validation }}
+    </li>
+  </ul>
+
+  <h4>Regular Expression</h4>
+  <p class="code">{{ regEx }}</p>
+</div>
