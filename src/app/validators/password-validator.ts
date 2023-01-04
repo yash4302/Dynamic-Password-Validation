@@ -4,11 +4,13 @@ import _ from 'lodash';
 export function PasswordValidator(
   username: string,
   password: string,
+  confirmPassword: string,
   pattern: string
 ): ValidatorFn {
   return (formGroup: FormGroup) => {
     let usernameControl = formGroup.controls[username];
     let passwordControl = formGroup.controls[password];
+    let confirmPasswordControl = formGroup.controls[confirmPassword];
 
     if (
       passwordControl.value !== '' &&
@@ -28,6 +30,13 @@ export function PasswordValidator(
         }
       }
     }
+
+    if (passwordControl.value !== confirmPasswordControl.value) {
+      confirmPasswordControl.setErrors({ noMatch: true });
+    } else {
+      confirmPasswordControl.setErrors(null);
+    }
+
     return null;
   };
 }

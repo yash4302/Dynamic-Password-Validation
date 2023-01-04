@@ -26,9 +26,15 @@ export class AppComponent implements OnInit {
       {
         username: [''],
         password: ['', [Validators.required, Validators.pattern(this.regEx)]],
+        confirmPassword: [''],
       },
       {
-        validator: PasswordValidator('username', 'password', this.regEx),
+        validator: PasswordValidator(
+          'username',
+          'password',
+          'confirmPassword',
+          this.regEx
+        ),
       }
     );
   }

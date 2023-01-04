@@ -13,7 +13,7 @@
       formControlName="password"
       class="form-control"
       id="password"
-      type="text"
+      type="password"
       autocomplete="off"
       [class.is-valid]="
         passwordForm.controls.password.value !== '' &&
@@ -21,6 +21,39 @@
       "
       [class.is-invalid]="passwordForm.controls.password.invalid"
     />
+    <div class="error-text" *ngIf="passwordForm.controls.password.invalid">
+      <p *ngIf="passwordForm.controls.password.hasError('required')">
+        Password is required
+      </p>
+      <p *ngIf="passwordForm.controls.password.hasError('username')">
+        Password should not contain username
+      </p>
+      <p *ngIf="passwordForm.controls.password.hasError('pattern')">
+        Password must follow given pattern
+      </p>
+    </div>
+
+    <label for="password" class="form-label">Confirm Password</label> <br />
+    <input
+      formControlName="confirmPassword"
+      class="form-control"
+      id="password"
+      type="password"
+      autocomplete="off"
+      [class.is-valid]="
+        passwordForm.controls.confirmPassword.value !== '' &&
+        !passwordForm.controls.confirmPassword.invalid
+      "
+      [class.is-invalid]="passwordForm.controls.confirmPassword.invalid"
+    />
+    <div
+      class="error-text"
+      *ngIf="passwordForm.controls.confirmPassword.invalid"
+    >
+      <p *ngIf="passwordForm.controls.confirmPassword.hasError('noMatch')">
+        Confirm Password must match with Password
+      </p>
+    </div>
   </form>
 </div>
 

@@ -5,3 +5,7 @@
 .code {
   font-family: 'Consolas', 'Courier New', Courier, monospace;
 }
+
+.error-text {
+  color: var(--bs-danger);
+}
