@@ -1,4 +1,4 @@
-# Dynamic-Password-Validation
+# Dynamic Password Validation in Angular
 
 An Angular application giving password validation feature in total dynamic way.
 Password complexity is given as an API response, which is handled for a password form control.
@@ -9,5 +9,6 @@ Following Complexities are currently handled:
 4. Need a Number
 5. Need a Special symbol
 6. Limiting repeating characters
-7. Password should not contain Username
+7. Password should not contain Username  
+
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-dynamic-password-validation)
