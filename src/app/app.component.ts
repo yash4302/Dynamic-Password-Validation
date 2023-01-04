@@ -102,7 +102,7 @@ export class AppComponent implements OnInit {
     return {
       primaryPasswordComplexity: {
         // version: 2,
-        minLen: 8,
+        minLen: 8, // Range: 0-9999
         // minTypes: 0,
         requireLowers: true,
         requireUppers: true,
@@ -111,9 +111,9 @@ export class AppComponent implements OnInit {
         isNotUsername: true,
         // enabled: true,
         // isAlternate: false,
-        maxRepeatedChars: 0,
-        checkPreviousPasswords: 0,
-        // minPasswordChangeInterval: 0,
+        maxRepeatedChars: 0, // Range: 2-9999
+        checkPreviousPasswords: 0, // Range: 1-10
+        // minPasswordChangeInterval: 0, // Range: 0-9999 hours (stored in seconds)
         // maxPasswordChangeInterval: 0,
         // maxSequentialFailedLogins: 10,
         // loginAutolockTimeout: 10,
